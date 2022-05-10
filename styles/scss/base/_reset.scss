@@ -1,0 +1,52 @@
+@use "../abstracts/" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: inherit;
+  font-family: $font-primary;
+  // border: 1px solid gray;
+  //   overflow-x: hidden;
+}
+
+body {
+  box-sizing: border-box;
+  background-image: url("../../../public/assets/bg2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.btn {
+  width: max-content;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 8px;
+  transition: $transition;
+  color: $color-light;
+  border: 3px solid $color-light;
+  cursor: pointer;
+  &:hover {
+    border-color: $color-primary;
+  }
+  &--primary {
+    background-color: darken($color-primary, 20%);
+    border: 3px solid transparent;
+  }
+}

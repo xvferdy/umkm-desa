@@ -1,0 +1,47 @@
+@use "../abstracts/" as *;
+
+p {
+  font-size: 16px;
+  font-weight: map-get($font-weights, medium);
+  letter-spacing: 1.5%;
+  line-height: 124.5%;
+  color: $color-blue;
+}
+a {
+  font-size: 18px;
+  font-weight: map-get($font-weights, medium);
+  transition: $transition;
+  color: $color-light;
+  &:hover {
+    color: $color-primary;
+  }
+}
+h1 {
+  font-size: 47px;
+  font-weight: map-get($font-weights, bold);
+  font-family: $font-secondary;
+  color: $color-light;
+}
+h2 {
+  font-size: 24px;
+  font-weight: map-get($font-weights, semiBold);
+
+  color: $color-light;
+}
+h3 {
+  font-size: 16px;
+  font-weight: map-get($font-weights, medium);
+  font-family: $font-secondary;
+  color: $color-light;
+}
+
+small {
+  font-size: 12px;
+  line-height: 124.5%;
+  color: $color-blue;
+}
+
+button {
+  font-size: 16px;
+  font-weight: map-get($font-weights, medium);
+}

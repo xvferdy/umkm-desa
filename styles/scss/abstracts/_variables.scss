@@ -1,0 +1,26 @@
+/* === COLORS === */
+$color-primary: #e7ac72;
+$color-light: #fff;
+$color-light-variant: rgba(255, 255, 255, 0.8);
+$color-trasparent: rgba(255, 255, 255, 0.4);
+$color-blue: #023f76;
+
+/* === FONTS === */
+// @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+$font-weights: (
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semiBold": 600,
+  "bold": 700,
+);
+$font-primary: "Poppins", sans-serif;
+$font-secondary: "Montserrat", sans-serif;
+
+/* === CONTAINERS === */
+$width-lg: 79%;
+$width-md: 86%;
+$width-sm: 90%;
+
+/* === TRANSITIONS === */
+$transition: 0.3s all ease;

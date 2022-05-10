@@ -1,0 +1,32 @@
+@use "../abstracts/" as *;
+
+.order {
+  // border: 1px solid #000;
+
+  .container {
+    max-width: $width-sm;
+    margin: 0 auto;
+  }
+
+  &__form {
+    padding: 37px;
+    background-color: $color-trasparent;
+    border-radius: 12px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    box-shadow: 64.02px 76.82px 80px rgba(0, 0, 0, 7%);
+    .MuiFormControl-root {
+      background-color: $color-light-variant;
+    }
+  }
+
+  // MEDIA-QUERIES
+  @include display(tab-port) {
+    &__form {
+      justify-content: center;
+    }
+  }
+  @include display(phone) {
+  }
+}
