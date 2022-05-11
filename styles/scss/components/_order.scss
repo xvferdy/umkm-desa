@@ -1,8 +1,6 @@
 @use "../abstracts/" as *;
 
 .order {
-  // border: 1px solid #000;
-
   .container {
     max-width: $width-sm;
     margin: 0 auto;
@@ -21,7 +19,7 @@
     }
   }
 
-  // MEDIA-QUERIES
+  /* MEDIA-QUERIES */
   @include display(tab-port) {
     &__form {
       justify-content: center;
@@ -30,9 +28,7 @@
   @include display(phone) {
     &__form {
       flex-direction: column;
-
       align-items: center;
-      // padding: 17px;
       .MuiFormControl-root {
         width: 100%;
       }

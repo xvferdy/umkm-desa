@@ -2,31 +2,20 @@
 
 main {
   margin: 0 auto;
-  // display: grid;
-  // gap: 3px;
   padding-bottom: 20px;
-  // MEDIA-QUERIES
-  @include display(tab-port) {
-    // gap: 4rem;
-  }
-  @include display(phone) {
-    // gap: 0.1rem;
-  }
 }
 
 section {
   min-height: calc(100vh - 149.96px);
   padding: 24px 0;
+  padding-top: 110px;
   & > .title {
     max-width: $width-lg;
     margin: 0 auto;
-    // text-align: center;
     padding-bottom: 54px;
   }
 
-  padding-top: 110px; // main gap & nav height
-
-  // MEDIA-QUERIES
+  /* MEDIA-QUERIES */
   @include display(tab-port) {
     & > .title {
       max-width: $width-sm;
@@ -39,9 +28,8 @@ section {
 section .container {
   max-width: $width-lg;
   margin: 0 auto;
-  // @extend %container;
 
-  // MEDIA-QUERIES
+  /* MEDIA-QUERIES */
   @include display(tab-port) {
     max-width: $width-sm;
   }
