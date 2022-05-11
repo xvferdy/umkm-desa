@@ -1,7 +1,7 @@
 @use "../abstracts/" as *;
 
 .hero {
-  max-width: 50%;
+  max-width: 56%;
 
   .title {
     h3 {
@@ -58,6 +58,16 @@
   @include display(phone) {
     .container {
       grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .destination {
+      flex-direction: row;
+
+      align-items: flex-start;
+      border-width: 0px;
+      &__img {
+        width: 100px;
+      }
     }
   }
 }

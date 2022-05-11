@@ -34,7 +34,7 @@ export default function Home() {
           <div className="title">
             <h3>Mountains | Plains | Beaches</h3>
             <h1>Spend your vacation with our activites</h1>
-            <h2>Most Popular</h2>
+            <h2>Our Top Spots</h2>
           </div>
           <div className="container hero__container">
             {destinations.map((destination, idx) => (

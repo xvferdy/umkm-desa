@@ -24,4 +24,12 @@
     align-items: center;
     gap: 55px;
   }
+
+  // MEDIA-QUERIES
+
+  @include display(phone) {
+    &__list {
+      gap: 25px;
+    }
+  }
 }

@@ -28,5 +28,22 @@
     }
   }
   @include display(phone) {
+    &__form {
+      flex-direction: column;
+
+      align-items: flex-end;
+      // padding: 17px;
+      .MuiFormControl-root {
+        width: 100%;
+      }
+      button {
+        margin-top: 10px;
+      }
+    }
+  }
+  @include display(sm-phone) {
+    &__form {
+      padding: 17px;
+    }
   }
 }
