@@ -2,13 +2,11 @@
 
 .nav {
   height: 70px;
-  // background-color: rgba($color-light, 0.8);
   backdrop-filter: blur(11px);
   position: fixed;
   width: 100%;
   z-index: 5;
   .container {
-    // border: 1px solid #000;
     max-width: $width-sm;
     margin: 0 auto;
     height: 100%;
@@ -16,17 +14,13 @@
     justify-content: space-between;
     align-items: center;
   }
-  &__logo {
-    // border: 1px solid #000;
-  }
   &__list {
     display: flex;
     align-items: center;
     gap: 55px;
   }
 
-  // MEDIA-QUERIES
-
+  /* MEDIA-QUERIES */
   @include display(phone) {
     &__list {
       gap: 25px;
