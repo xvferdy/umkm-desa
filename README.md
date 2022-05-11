@@ -7,7 +7,7 @@ Landing page design for travel agency website to promote tourist attractions in 
 
 👓 **Preview:**
 <p align="center">
-  <img src="./public/assets/preview.png">
+  <img src="./public/assets/preview2.png">
 </p>
 
 🌍 **Demo:** https://umkm-desa.vercel.app
