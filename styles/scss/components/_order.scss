@@ -13,7 +13,9 @@
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    box-shadow: 64.02px 76.82px 80px rgba(0, 0, 0, 7%);
+    // box-shadow: 64.02px 76.82px 80px rgba(0, 0, 0, 7%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    position: relative;
     .MuiFormControl-root {
       background-color: $color-light-variant;
     }
