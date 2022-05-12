@@ -3,24 +3,7 @@ import Image from "next/image";
 import { FiUsers } from "react-icons/fi";
 import Order from "../components/Order";
 
-export default function Home() {
-  const destinations = [
-    {
-      title: "Teluk Toran",
-      desc: "31 people going",
-      img: "/assets/desa-1.jpg",
-    },
-    {
-      title: "Pulau Karst",
-      desc: "27 people going",
-      img: "/assets/desa-2.jpg",
-    },
-    {
-      title: "Pantai Patawana",
-      desc: "20 people going",
-      img: "/assets/desa-3.jpg",
-    },
-  ];
+export default function Home({ places }) {
   return (
     <div>
       <Head>
@@ -37,22 +20,22 @@ export default function Home() {
             <h2>Grand Opening Spots</h2>
           </div>
           <div className="container hero__container">
-            {destinations.map((destination, idx) => (
+            {places.map((place, idx) => (
               <article key={idx} className="destination">
                 <div className="destination__img">
                   <Image
-                    src={destination.img}
+                    src={place.image}
                     width={158}
                     height={154}
-                    alt={destination.title}
+                    alt={place.title}
                     layout="responsive"
                   />
                 </div>
                 <div className="destination__info">
-                  <p>{destination.title}</p>
+                  <p>{place.title}</p>
                   <small>
                     <FiUsers />
-                    {destination.desc}
+                    {place.people} people going
                   </small>
                 </div>
               </article>
@@ -64,3 +47,14 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  const res = await fetch("http://localhost:3000/api/places");
+  const data = await res.json();
+
+  return {
+    props: {
+      places: data,
+    },
+  };
+};

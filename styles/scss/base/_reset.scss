@@ -46,8 +46,10 @@ img {
     border-color: $color-primary;
   }
   &--primary {
-    background-color: darken($color-primary, 20%);
+    background-color: darken($color-primary, 15%);
+    // background-color: $color-primary;
     border: 3px solid transparent;
+    min-width: 170px;
   }
 
   &__list {

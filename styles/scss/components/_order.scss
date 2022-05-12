@@ -13,7 +13,10 @@
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    box-shadow: 64.02px 76.82px 80px rgba(0, 0, 0, 7%);
+    // box-shadow: 64.02px 76.82px 80px rgba(0, 0, 0, 7%);
+    // box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    position: relative;
     .MuiFormControl-root {
       background-color: $color-light-variant;
     }
@@ -40,6 +43,22 @@
   @include display(sm-phone) {
     &__form {
       padding: 17px;
+    }
+  }
+}
+
+.AnimatedEllipsis {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  &::after {
+    display: inline-block;
+    content: "...";
+    animation: AnimatedEllipsis-keyframes 1.2s steps(4, jump-none) infinite;
+  }
+  @keyframes AnimatedEllipsis-keyframes {
+    0% {
+      transform: translateX(-100%);
     }
   }
 }
