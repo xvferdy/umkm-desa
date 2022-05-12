@@ -6,18 +6,13 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 const Order = () => {
   const [value, setValue] = useState(null);
-
-  // const [date, setDate] = useState("");
   const [email, setEmail] = useState("");
   const [err, setErr] = useState(false);
-  console.log(value);
   const [loading, setLoading] = useState(false);
-
   let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
   const handleSubmit = async (params) => {
-    // if (value === null || err) return alert("error");
-
+    if (!email.match(pattern)) return alert("Periksa kembali Email");
     try {
       setLoading(true);
       const res = await fetch("/api/reservations", {
@@ -27,13 +22,13 @@ const Order = () => {
         },
         body: JSON.stringify({ email: email, date: value }),
       });
-      // const data = await res.json();
 
       if (res.status === 201) {
-        alert("Terimakasih telah memesan melalui website kami");
+        alert("Terima kasih telah memesan melalui website kami");
+        setLoading(false);
       }
       if (res.status !== 201) {
-        alert("Error Cuy");
+        alert("Tanggal error");
         setLoading(false);
       }
     } catch (err) {
@@ -72,7 +67,14 @@ const Order = () => {
             type="button"
             onClick={handleSubmit}
           >
-            Book
+            {loading ? (
+              <>
+                process
+                <span className="AnimatedEllipsis" />
+              </>
+            ) : (
+              "Book"
+            )}
           </button>
         </form>
       </div>
