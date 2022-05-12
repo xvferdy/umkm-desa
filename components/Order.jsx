@@ -11,13 +11,34 @@ const Order = () => {
   const [email, setEmail] = useState("");
   const [err, setErr] = useState(false);
   console.log(value);
+  const [loading, setLoading] = useState(false);
 
   let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
-  const handleSubmit = (params) => {
+  const handleSubmit = async (params) => {
     // if (value === null || err) return alert("error");
 
-    return alert("booked!");
+    try {
+      setLoading(true);
+      const res = await fetch("/api/reservations", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: email, date: value }),
+      });
+      // const data = await res.json();
+
+      if (res.status === 201) {
+        alert("Terimakasih telah memesan melalui website kami");
+      }
+      if (res.status !== 201) {
+        alert("Error Cuy");
+        setLoading(false);
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div className="order">
