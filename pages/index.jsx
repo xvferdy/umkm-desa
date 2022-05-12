@@ -2,7 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import { FiUsers } from "react-icons/fi";
 import Order from "../components/Order";
-import { MongoClient } from "mongodb";
 
 export default function Home({ places }) {
   return (
@@ -50,20 +49,12 @@ export default function Home({ places }) {
 }
 
 export const getStaticProps = async () => {
-  // const res = await fetch("https://umkm-desa.vercel.app/api/places");
-  // const data = await res.json();
-
-  const client = await MongoClient.connect(process.env.MONGODB_URI);
-  const db = client.db();
-  const placeCollection = db.collection("places");
-  const places = await placeCollection.find().toArray();
-
-  client.close();
+  const res = await fetch("https://umkm-desa.vercel.app/api/places");
+  const data = await res.json();
 
   return {
     props: {
-      // places: data,
-      places: JSON.parse(JSON.stringify(places)),
+      places: data,
     },
   };
 };
