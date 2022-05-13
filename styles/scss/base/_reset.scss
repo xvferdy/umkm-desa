@@ -47,17 +47,14 @@ img {
   }
   &--primary {
     background-color: darken($color-primary, 15%);
-    // background-color: $color-primary;
     border: 3px solid transparent;
     min-width: 170px;
   }
-
   &__list {
     display: flex;
     align-items: center;
     gap: 55px;
   }
-
   @include display(phone) {
     padding: 6px 16px;
     border-width: 2px;

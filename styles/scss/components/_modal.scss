@@ -11,9 +11,12 @@
   z-index: 8;
 }
 .modal {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
   position: fixed;
-
   width: 400px;
   height: 300px;
   top: calc(50% - 300px / 2);
@@ -22,20 +25,11 @@
   border-radius: 8px;
   background-color: $color-light;
   z-index: 10;
-  transition: $transition;
-
+  transition: $transition-modal;
   &--open {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-
-    transform: translateX(0);
-
-    // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transform: translateY(0);
   }
   &--closed {
-    transform: translateX(-100%);
+    transform: translateY(-100vh);
   }
 }

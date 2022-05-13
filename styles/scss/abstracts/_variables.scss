@@ -3,9 +3,7 @@ $color-primary: #e7ac72;
 $color-light: #fff;
 $color-light-variant: rgba(255, 255, 255, 0.8);
 $color-trasparent: rgba(255, 255, 255, 0.4);
-// $color-backdrop: rgba(0, 0, 0, 0.8);
 $color-backdrop: rgba(26, 26, 26, 0.7);
-
 $color-blue: #023f76;
 
 /* === FONTS === */
@@ -27,3 +25,4 @@ $width-sm: 90%;
 
 /* === TRANSITIONS === */
 $transition: 0.3s all ease;
+$transition-modal: 0.4s all ease-in-out;

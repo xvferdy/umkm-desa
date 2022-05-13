@@ -1,10 +1,8 @@
 @use "../abstracts/" as *;
 
 .nav {
-  // background-color: antiquewhite;
   height: max-content;
   padding: 17px 0;
-  // padding-top: 50px;
   backdrop-filter: blur(11px);
   position: fixed;
   width: 100%;

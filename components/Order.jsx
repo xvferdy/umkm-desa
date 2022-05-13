@@ -9,13 +9,11 @@ const Order = () => {
   const [value, setValue] = useState(null);
   const [email, setEmail] = useState("");
   const [err, setErr] = useState(false);
-
   const [modal, setModal] = useState(false);
   const [text, setText] = useState("");
   let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
   const handleSubmit = async () => {
-    // if (!email.match(pattern)) return alert("Periksa kembali Email");
     if (!email.match(pattern)) {
       return setText("Periksa kembali Email"), setModal(true);
     }
@@ -30,15 +28,13 @@ const Order = () => {
       });
 
       if (res.status === 201) {
-        // alert("Terima kasih telah memesan melalui website kami");
         setText("Terima kasih telah memesan melalui website kami");
         setModal(true);
-
         setEmail("");
         setValue(null);
+        setErr(false);
       }
       if (res.status !== 201) {
-        // alert("Tanggal error");
         setText("Tanggal error");
         setModal(true);
       }

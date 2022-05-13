@@ -37,13 +37,11 @@ h3 {
   font-family: $font-secondary;
   color: $color-light;
 }
-
 small {
   font-size: 12px;
   line-height: 124.5%;
   color: $color-blue;
 }
-
 button {
   font-size: 18px;
   font-weight: map-get($font-weights, medium);
