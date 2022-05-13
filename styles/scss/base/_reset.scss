@@ -22,7 +22,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   @include display(phone) {
-    background-size: auto;
+    background-attachment: scroll;
   }
 }
 
