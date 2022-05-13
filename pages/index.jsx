@@ -20,8 +20,8 @@ export default function Home({ places }) {
             <h2>Grand Opening Spots</h2>
           </div>
           <div className="container hero__container">
-            {places.map((place, idx) => (
-              <article key={idx} className="destination">
+            {places.map((place) => (
+              <article key={place._id} className="destination">
                 <div className="destination__img">
                   <Image
                     src={place.image}

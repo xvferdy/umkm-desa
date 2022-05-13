@@ -50,6 +50,12 @@ img {
     border: 3px solid transparent;
     min-width: 170px;
   }
+  &--disable {
+    background-color: $color-primary;
+    border: 3px solid transparent;
+    min-width: 170px;
+    cursor: wait;
+  }
   &__list {
     display: flex;
     align-items: center;

@@ -11,6 +11,7 @@ const Order = () => {
   const [err, setErr] = useState(false);
   const [modal, setModal] = useState(false);
   const [text, setText] = useState("");
+  const [loading, setLoading] = useState(false);
   let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
   const handleSubmit = async () => {
@@ -19,6 +20,7 @@ const Order = () => {
     }
 
     try {
+      setLoading(true);
       const res = await fetch("/api/reservations", {
         method: "POST",
         headers: {
@@ -45,6 +47,7 @@ const Order = () => {
 
   const closeModal = () => {
     setModal(false);
+    setLoading(false);
   };
 
   return (
@@ -78,11 +81,19 @@ const Order = () => {
             />
           </LocalizationProvider>
           <button
-            className="btn btn--primary"
+            className={loading ? "btn btn--disable" : "btn btn--primary"}
             type="button"
             onClick={handleSubmit}
+            disabled={loading}
           >
-            Book
+            {loading ? (
+              <>
+                process
+                <span className="AnimatedEllipsis" />
+              </>
+            ) : (
+              "Book"
+            )}
           </button>
         </form>
       </div>
