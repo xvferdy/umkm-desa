@@ -1,0 +1,11 @@
+@use "../abstracts/" as *;
+.not-found {
+  min-height: 100vh;
+  text-align: center;
+  p {
+    color: $color-light;
+  }
+  a {
+    text-decoration: underline;
+  }
+}

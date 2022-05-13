@@ -72,7 +72,9 @@ const Order = () => {
               onChange={(newValue) => {
                 setValue(newValue);
               }}
-              renderInput={(params) => <TextField {...params} />}
+              renderInput={(params) => (
+                <TextField {...params} sx={{ minWidth: 148 }} />
+              )}
             />
           </LocalizationProvider>
           <button
