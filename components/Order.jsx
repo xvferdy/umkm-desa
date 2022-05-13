@@ -3,18 +3,24 @@ import TextField from "@mui/material/TextField";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import Modal from "./Modal";
 
 const Order = () => {
   const [value, setValue] = useState(null);
   const [email, setEmail] = useState("");
   const [err, setErr] = useState(false);
-  const [loading, setLoading] = useState(false);
+
+  const [modal, setModal] = useState(false);
+  const [text, setText] = useState("");
   let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
-  const handleSubmit = async (params) => {
-    if (!email.match(pattern)) return alert("Periksa kembali Email");
+  const handleSubmit = async () => {
+    // if (!email.match(pattern)) return alert("Periksa kembali Email");
+    if (!email.match(pattern)) {
+      return setText("Periksa kembali Email"), setModal(true);
+    }
+
     try {
-      setLoading(true);
       const res = await fetch("/api/reservations", {
         method: "POST",
         headers: {
@@ -24,20 +30,31 @@ const Order = () => {
       });
 
       if (res.status === 201) {
-        alert("Terima kasih telah memesan melalui website kami");
-        setLoading(false);
+        // alert("Terima kasih telah memesan melalui website kami");
+        setText("Terima kasih telah memesan melalui website kami");
+        setModal(true);
+
+        setEmail("");
+        setValue(null);
       }
       if (res.status !== 201) {
-        alert("Tanggal error");
-        setLoading(false);
+        // alert("Tanggal error");
+        setText("Tanggal error");
+        setModal(true);
       }
     } catch (err) {
       console.log(err);
     }
   };
+
+  const closeModal = () => {
+    setModal(false);
+  };
+
   return (
     <div className="order">
       <div className="container order__container">
+        <Modal modal={modal} closeModal={closeModal} text={text} />
         <form className="order__form">
           <TextField
             fullWidth
@@ -67,14 +84,7 @@ const Order = () => {
             type="button"
             onClick={handleSubmit}
           >
-            {loading ? (
-              <>
-                process
-                <span className="AnimatedEllipsis" />
-              </>
-            ) : (
-              "Book"
-            )}
+            Book
           </button>
         </form>
       </div>

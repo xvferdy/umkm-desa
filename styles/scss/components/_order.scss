@@ -1,6 +1,7 @@
 @use "../abstracts/" as *;
 
 .order {
+  // overflow: hidden;
   .container {
     max-width: $width-sm;
     margin: 0 auto;
@@ -43,22 +44,6 @@
   @include display(sm-phone) {
     &__form {
       padding: 17px;
-    }
-  }
-}
-
-.AnimatedEllipsis {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: bottom;
-  &::after {
-    display: inline-block;
-    content: "...";
-    animation: AnimatedEllipsis-keyframes 1.2s steps(4, jump-none) infinite;
-  }
-  @keyframes AnimatedEllipsis-keyframes {
-    0% {
-      transform: translateX(-100%);
     }
   }
 }
