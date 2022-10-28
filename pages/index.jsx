@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FiUsers } from "react-icons/fi";
 import Order from "../components/Order";
 
-export default function Home({ places }) {
+export default function Home({}) {
   return (
     <div>
       <Head>
@@ -19,7 +19,7 @@ export default function Home({ places }) {
             <h1>Spend your vacation with our activites</h1>
             <h2>Grand Opening Spots</h2>
           </div>
-          <div className="container hero__container">
+          {/* <div className="container hero__container">
             {places.map((place) => (
               <article key={place._id} className="destination">
                 <div className="destination__img">
@@ -40,7 +40,7 @@ export default function Home({ places }) {
                 </div>
               </article>
             ))}
-          </div>
+          </div> */}
         </section>
         <Order />
       </main>
@@ -48,13 +48,13 @@ export default function Home({ places }) {
   );
 }
 
-export const getStaticProps = async () => {
-  const res = await fetch("https://umkm-desa.vercel.app/api/places");
-  const data = await res.json();
+// export const getStaticProps = async () => {
+//   const res = await fetch("https://umkm-desa.vercel.app/api/places");
+//   const data = await res.json();
 
-  return {
-    props: {
-      places: data,
-    },
-  };
-};
+//   return {
+//     props: {
+//       places: data,
+//     },
+//   };
+// };
