@@ -8,9 +8,9 @@ export default async function handler(req, res) {
   if (method === "GET") {
     try {
       const place = await Place.find();
-      res.status(200).json(JSON.stringify(place));
+      res.status(200).json(place);
     } catch (err) {
-      res.status(500).json(JSON.stringify(err));
+      res.status(500).json(err);
     }
   }
 
@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       const place = await Place.create(req.body);
       res.send("Place added");
     } catch (err) {
-      res.status(500).json(JSON.stringify(err));
+      res.status(500).json(err);
     }
   }
 }

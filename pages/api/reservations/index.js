@@ -8,9 +8,9 @@ export default async function handler(req, res) {
   if (method === "POST") {
     try {
       const reservation = await Reservation.create(req.body);
-      res.status(201).json(JSON.stringify(reservation));
+      res.status(201).json(reservation);
     } catch (err) {
-      res.status(500).json(JSON.stringify(err));
+      res.status(500).json(err);
     }
   }
 }
